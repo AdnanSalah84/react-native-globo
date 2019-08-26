@@ -1,23 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-export class Header extends React.Component() {
+export class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { isLoggedIn: false };
+        this.state = { isLoggedIn: false }
     }
 
     toggleUser = () => {
         this.setState(prevState => {
             return { isLoggedIn: !prevState.isLogged }
-        });
+        })
     }
 
     render() {
         let display = this.state.isLoggedIn ? 'Sample User' : this.props.message;
         return (
             <View style={styles.headStyle}>
-                <Text onPress={this.toggleUser}>{display} </Text>
+                <Text
+                    style={styles.headText}
+                    onPress={this.toggleUser}>{display}</Text>
             </View>
         )
     }
@@ -31,8 +33,8 @@ const styles = StyleSheet.create({
     },
     headStyle: {
         paddingTop: 30,
-        paddingBottom:10,
-        paddingRight:10,
-        backgroundColor: '#35605a'
+        paddingRight: 10,
+        backgroundColor: '#35605a',
+        flex: 1
     }
 });
