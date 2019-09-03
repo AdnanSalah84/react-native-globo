@@ -11,7 +11,7 @@ import { createStackNavigator } from 'react-navigation';
 export class Home extends React.Component {
     static navigationOptions = {
         header: null
-    }
+    };
 
     render() {
 
@@ -20,7 +20,7 @@ export class Home extends React.Component {
         return (
 
             <View style={styles.container}>
-                <Header message='Press to Login' />
+                <Header navigate={navigate} message='Press to Login' />
                 {/* <Text style={{ flex: 8 }}>This will be the Homepage</Text> */}
                 {/* <Text style={{ flex: 8 }}>These other lines are here</Text> */}
                 <Hero />
