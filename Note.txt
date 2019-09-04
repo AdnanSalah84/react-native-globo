@@ -19,3 +19,5 @@ Install expo on your mobile device
 npm install -g react-devtools
 
 Google Console
+
+Download -> https://expo.io/tools#sdk

@@ -1,13 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableHighlight, Alert } from 'react-native';
 import { Header } from '../sections/Header.js';
-import { createStackNavigator } from 'react-navigation';
 
 export class Contact extends React.Component {
     static navigationOptions = {
         header: null
     };
-
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +18,7 @@ export class Contact extends React.Component {
     clearFields = () => this.setState({ name: '', msg: '', email: '' });
 
     sendMessage = () => {
-        alert(this.state.name, this.state.msg);
+        Alert.alert(this.state.name, this.state.msg);
         this.props.navigation.goBack();
     };
 
@@ -55,19 +53,20 @@ export class Contact extends React.Component {
                 <TouchableHighlight onPress={this.sendMessage} underlayColor='#31e981'>
                     <Text style={styles.buttons}>
                         Send Message
-                    </Text>
+                </Text>
                 </TouchableHighlight>
 
                 <TouchableHighlight onPress={this.clearFields} underlayColor='#31e981'>
                     <Text style={styles.buttons}>
                         Reset Form
-                    </Text>
+              </Text>
                 </TouchableHighlight>
 
             </View>
         );
     }
 };
+
 
 
 const styles = StyleSheet.create({
